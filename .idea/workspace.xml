@@ -1,7 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a1a0386-ba4b-4182-910c-ac0e4e15b38e" name="Default Changelist" comment="" />
+    <list default="true" id="5a1a0386-ba4b-4182-910c-ac0e4e15b38e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/DAO/Conexion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/DB/ArticuloDB.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/DB/ComentarioDB.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/DB/Conexion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/DB/EtiquetaDB.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/DB/UsuarioDB.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/clases/Articulo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/clases/Comentario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/clases/Etiqueta.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/clases/Usuario.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/agregarArticulo.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/agregarArticulo.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/crearUsuario.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/crearUsuario.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/editarArticulo.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/editarArticulo.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/eliminarArticulo.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/eliminarArticulo.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/home.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/home.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/indexArticulo.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/indexArticulo.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/login.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/Articulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/Articulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/Etiqueta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/Etiqueta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/clases/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/clases/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/agregarArticulo.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/agregarArticulo.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/crearUsuario.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/crearUsuario.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/editarArticulo.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/editarArticulo.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/eliminarArticulo.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/eliminarArticulo.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/indexArticulo.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/indexArticulo.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +68,9 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SdICXGxS5HuT0DoRoxquZXHRAv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -56,53 +101,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="Prac3-Web" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="Prac3-Web" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -120,11 +118,27 @@
       <option name="presentableId" value="Default" />
       <updated>1571886918383</updated>
       <workItem from="1571886921557" duration="8000" />
-      <workItem from="1571886963397" duration="2064000" />
+      <workItem from="1571886963397" duration="5109000" />
+      <workItem from="1571932772749" duration="8754000" />
+      <workItem from="1572031519311" duration="80000" />
+      <workItem from="1572488865272" duration="4278000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

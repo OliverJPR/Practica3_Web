@@ -21,47 +21,43 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-dark" id = "custom-nav">
-    <a href="/"> </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <#if admin || autor>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/agregarArticulo">Nuevo Post</a>
+            </li>
+            </#if>
+            <#if admin>
+            <li class="nav-item">
+                <a class="nav-link" href="usuario/crearUsuario">Nuevo Usuario</a>
+            </li>
+            </#if>
 
-                                <ul class="nav navbar-nav">
-                                        <#if admin || autor>
-                                    <li class="nav-item">
-                                        <a class="btn btn-link text-light" href="/agregarArticulo">
-                                            Crear artículo
-                                        </a>
-                                    </li>
-                                        </#if>
-                                    <#if admin>
-                                        <li class="nav-item">
-                                            <a class="btn btn-link text-light" href="usuario/crearUsuario">
-                                                Nuevo usuario
-                                            </a>
-                                        </li>
-                                    </#if>
+            <#if admin || autor>
+            <form class="form-inline my-2 my-lg-0" action="/logout">
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+            <#else>
+            <form class="form-inline my-2 my-lg-0" action="/login">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+            </form>
+            </#if>
 
-                                </ul>
 
-                                <#if admin || autor>
-                                    <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item">
-                                            <a href="/logout">
-                                                Log out
-                                            </a>
-                                        </li>
-                                    </ul>
-                                <#else>
-                                <ul class="navbar-nav ml-auto">
-                                    <a href="/login">
-                                        Log in
-                                    </a>
-                                </li>
 
-                                </ul>
-
-                                </#if>
-
+        </ul>
+    </div>
 </nav>
+
 <div class="col-12 p-2">
     <div class="row">
         <#list LosArticulos as articulo>

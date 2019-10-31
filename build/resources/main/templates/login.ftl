@@ -1,25 +1,36 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<body>
+<div id="login">
+    <nav class="navbar navbar-light bg-light">
+        Blog
+    </nav>
+    <h3 class="text-center text-white pt-5">Login form</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="/login" method="post">
+                        <h3 class="text-center text-info">Login</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info">Username:</label><br>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="Nombre Usuario" required="" autofocus="">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <input type="password" name="password" placeholder="Contraseña" required="" id="password" class="form-control">
+                        </div>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<!------ Include the above in your HEAD tag ---------->
-<link rel="stylesheet" href="/styles/login.css">
-<div class = "container">
-    <div class="wrapper">
-        <form class="form-signin" method="post" action="/login">
-            <h3 class="form-signin-heading">Bienvenidos! Porfavor Entrar</h3>
-            <hr class="colorgraph"><br>
-
-            <input type="text" class="form-control rounded-0" name="username" placeholder="usuario" required="" autofocus="" />
-            <input type="password" class="form-control rounded-0" name="password" placeholder="contraseña" required=""/>
-            <input class="form-check-input" type="checkbox" name="keepLog">
-            <label class="form-check-label" for="keepLog">
-                <strong>Mantener Logeado</strong>
-            </label>
-            <button class="btn btn-lg btn-primary btn-block"  name="Submit" value="Login" type="Submit">Login</button>
-
-        </form>
+                        <div class="form-group">
+                            <label for="keepLog-me" class="text-info"><span>Recuerdame </span><span><input id="keepLog" name="keepLog" type="checkbox"></span></label><br>
+                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Login">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+
 </div>
+</body>

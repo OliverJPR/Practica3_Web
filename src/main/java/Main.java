@@ -29,18 +29,18 @@ public class Main {
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_28);
         configuration.setClassForTemplateLoading(Main.class, "/");
 
-        UsuarioDB usuarioDao = new UsuarioDB();
-        usuarioDao.crearDB();
-        if(usuarioDao.countUsuarios() == 0){
+        UsuarioDB usuarioDB = new UsuarioDB();
+        usuarioDB.crearDB();
+        if(usuarioDB.countUsuarios() == 0){
             Usuario admin = new Usuario("admin","admin","admin",true,true);
-            usuarioDao.insertarUsuario(admin);
+            usuarioDB.insertarUsuario(admin);
             System.out.println("Admin creado con exito.");
         }
 
 
-        ArticuloDB articuloDao = new ArticuloDB();
-        EtiquetaDB etiquetaDao = new EtiquetaDB();
-        ComentarioDB comentarioDao = new ComentarioDB();
+        ArticuloDB articuloDB = new ArticuloDB();
+        EtiquetaDB etiquetaDB = new EtiquetaDB();
+        ComentarioDB comentarioDB = new ComentarioDB();
 
         before("/", (req, res) -> {
             if (req.cookie("cookieSesion") != null) {
@@ -48,7 +48,7 @@ public class Main {
                 textEncryptor.setPassword("xdxd178245");
                 String sesion = textEncryptor.decrypt(req.cookie("cookieSesion"));
 
-                Usuario oldUsuario = usuarioDao.getSesion(sesion);
+                Usuario oldUsuario = usuarioDB.getSesion(sesion);
                 nombreLogeado = oldUsuario.getUsername();
                 usuarioLogeado = oldUsuario;
                 req.session().attribute("sesion", oldUsuario);
@@ -76,7 +76,7 @@ public class Main {
 
             nombreLogeado = req.queryParams("username");
             String password = req.queryParams("password");
-            usuarioLogeado = usuarioDao.getUsuario(nombreLogeado, password);
+            usuarioLogeado = usuarioDB.getUsuario(nombreLogeado, password);
 
             if (usuarioLogeado != null) {
                 req.session().attribute("sesion", usuarioLogeado);
@@ -88,7 +88,7 @@ public class Main {
                     String encrypt = textEncryptor.encrypt(sesion);
 
                     res.cookie("/", "sesion", encrypt, 604800, false);
-                    usuarioDao.saveCookies(usuarioLogeado.getId(),req.session().id());
+                    usuarioDB.saveCookies(usuarioLogeado.getId(),req.session().id());
                 }
 
                 res.redirect("/");
@@ -105,9 +105,9 @@ public class Main {
             Map<String, Object> atr = new HashMap<>();
             Template template = configuration.getTemplate("templates/home.ftl");
 
-            List<Articulo> articuloList = articuloDao.listarArticulos();
+            List<Articulo> articuloList = articuloDB.listarArticulos();
             for(int i = 0; i < articuloList.size(); i++){
-                articuloList.get(i).setListaEtiqueta(etiquetaDao.getEtiquetas(articuloList.get(i).getId()));
+                articuloList.get(i).setListaEtiqueta(etiquetaDB.getEtiquetas(articuloList.get(i).getId()));
             }
             atr.put("admin",usuarioLogeado.isAdministrator());
             atr.put("autor",usuarioLogeado.isAutor());
@@ -150,7 +150,7 @@ public class Main {
 
             Usuario u =  new Usuario(user,nombre,password,Boolean.valueOf(administrator),Boolean.valueOf(autor));
 
-            usuarioDao.insertarUsuario(u);
+            usuarioDB.insertarUsuario(u);
 
 
             res.redirect("/");
@@ -175,29 +175,29 @@ public class Main {
             List<String> listaEtiquetas = Arrays.asList(etiquetas.split(","));
 
             Long idArticulo =  new Long(0);
-            if(articuloDao.countArticulos() != 0){
-                idArticulo = articuloDao.lastArticulo();
+            if(articuloDB.countArticulos() != 0){
+                idArticulo = articuloDB.lastArticulo();
 
             }
             System.out.println(idArticulo);
             Long countEtiqueta = new Long(0);
-            if(etiquetaDao.countEtiquetas() != 0){
-                countEtiqueta =  etiquetaDao.lastEtiqueta();
+            if(etiquetaDB.countEtiquetas() != 0){
+                countEtiqueta =  etiquetaDB.lastEtiqueta();
             }
             ArrayList<Etiqueta> et =  new ArrayList<>();
             for(int i = 0; i < listaEtiquetas.size(); i++){
                 Etiqueta e = new Etiqueta(listaEtiquetas.get(i));
                 et.add(e);
-                etiquetaDao.insertarEtiqueta(e);
+                etiquetaDB.insertarEtiqueta(e);
             }
 
             Date d = new Date(System.currentTimeMillis());
 
             Articulo a =  new Articulo(titulo,cuerpo,Long.valueOf(0),d,null,et);
-            articuloDao.insertarArticulo(a);
+            articuloDB.insertarArticulo(a);
 
             for(int i = 0; i < listaEtiquetas.size(); i++){
-                articuloDao.insertarArticuloEtiqueta(idArticulo,countEtiqueta);
+                articuloDB.insertarArticuloEtiqueta(idArticulo,countEtiqueta);
                 countEtiqueta++;
             }
 
@@ -216,9 +216,9 @@ public class Main {
                 Map<String, Object> atributos = new HashMap<>();
                 Template template = configuration.getTemplate("templates/indexArticulo.ftl");
                 System.out.println(req.params("id"));
-                Articulo articulo = articuloDao.getArticuloId(Long.parseLong(req.params("id")));
-                articulo.setListaEtiqueta(etiquetaDao.getEtiquetas(articulo.getId()));
-                articulo.setListaComentarios(comentarioDao.getComentario(articulo.getId()));
+                Articulo articulo = articuloDB.getArticuloId(Long.parseLong(req.params("id")));
+                articulo.setListaEtiqueta(etiquetaDB.getEtiquetas(articulo.getId()));
+                articulo.setListaComentarios(comentarioDB.getComentario(articulo.getId()));
                 atributos.put("articulo", articulo);
                 atributos.put("username", nombreLogeado);
                 atributos.put("admin", usuarioLogeado.isAdministrator());
@@ -238,11 +238,11 @@ public class Main {
 
 
                 Long countComentario = 0L;
-                if(comentarioDao.countComentario() != 0){
-                    countComentario =  comentarioDao.lastComentario();
+                if(comentarioDB.countComentario() != 0){
+                    countComentario =  comentarioDB.lastComentario();
                 }
-                comentarioDao.insertarComentario(c);
-                articuloDao.insertarArticuloComentario(idArticulo,countComentario);
+                comentarioDB.insertarComentario(c);
+                articuloDB.insertarArticuloComentario(idArticulo,countComentario);
                 res.redirect("/articulo/" + idArticulo);
                 return null;
             });
@@ -253,7 +253,7 @@ public class Main {
                     Map<String, Object> atributos = new HashMap<>();
                     Template template = configuration.getTemplate("templates/eliminarArticulo.ftl");
 
-                    Articulo articulo = articuloDao.getArticuloId(Long.parseLong(req.params("id")));
+                    Articulo articulo = articuloDB.getArticuloId(Long.parseLong(req.params("id")));
 
                     atributos.put("articulo", articulo);
                     template.process(atributos, writer);
@@ -270,7 +270,7 @@ public class Main {
                 Map<String, Object> atributos = new HashMap<>();
                 Template template = configuration.getTemplate("templates/editarArticulo.ftl");
 
-                Articulo articulo = articuloDao.getArticuloId(Long.parseLong(req.params("id")));
+                Articulo articulo = articuloDB.getArticuloId(Long.parseLong(req.params("id")));
 
                 atributos.put("articulo", articulo);
                 atributos.put("autor", usuarioLogeado.isAutor());
@@ -284,7 +284,7 @@ public class Main {
 
         post("/eliminar/:id", (req, res) -> {
             if (usuarioLogeado.isAdministrator() || usuarioLogeado.isAutor()) {
-                articuloDao.borrarArticulo(Long.valueOf(req.params("id")));
+                articuloDB.borrarArticulo(Long.valueOf(req.params("id")));
             }
             res.redirect("/");
             return null;
@@ -296,7 +296,7 @@ public class Main {
             String titulo = req.queryParams("titulo");
             String cuerpo = req.queryParams("cuerpo");
 
-            articuloDao.editarArticulo(id,titulo,cuerpo);
+            articuloDB.editarArticulo(id,titulo,cuerpo);
 
             res.redirect("/");
 

@@ -5,6 +5,24 @@ import java.util.List;
 
 public class Articulo {
 
+    private Long id;
+    private String titulo;
+    private String cuerpo;
+    private Long id_autor;
+    private Date fecha;
+    private List<Comentario> listaComentarios;
+    private List<Etiqueta> listaEtiqueta;
+    private boolean activo;
+
+    public Articulo(String titulo, String cuerpo, Long autor, Date fecha, List<Comentario> listaComentarios, List<Etiqueta> listaEtiqueta) {
+        this.titulo = titulo;
+        this.cuerpo = cuerpo;
+        this.id_autor = autor;
+        this.fecha = fecha;
+        this.listaComentarios = listaComentarios;
+        this.listaEtiqueta = listaEtiqueta;
+    }
+
     public Long getId() {
         return id;
     }
@@ -12,13 +30,6 @@ public class Articulo {
     public void setId(Long id) {
         this.id = id;
     }
-
-    private Long id;
-    private String titulo;
-    private String cuerpo;
-    private Long id_autor;
-    private Date fecha;
-    private List<Comentario> listaComentarios;
 
     public Long getId_autor() {
         return id_autor;
@@ -34,18 +45,6 @@ public class Articulo {
 
     public void setActivo(boolean activo) {
         this.activo = activo;
-    }
-
-    private boolean activo;
-
-
-    public Articulo(String titulo, String cuerpo, Long autor, Date fecha, List<Comentario> listaComentarios, List<Etiqueta> listaEtiqueta) {
-        this.titulo = titulo;
-        this.cuerpo = cuerpo;
-        this.id_autor = autor;
-        this.fecha = fecha;
-        this.listaComentarios = listaComentarios;
-        this.listaEtiqueta = listaEtiqueta;
     }
 
     public List<Comentario> getListaComentarios() {
@@ -64,8 +63,6 @@ public class Articulo {
     public void setListaEtiqueta(List<Etiqueta> listaEtiqueta) {
         this.listaEtiqueta = listaEtiqueta;
     }
-
-    private List<Etiqueta> listaEtiqueta;
 
     public String getTitulo() {
         return titulo;
