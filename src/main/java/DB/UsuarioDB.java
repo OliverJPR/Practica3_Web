@@ -41,7 +41,6 @@ public class UsuarioDB {
     }
 
     public void crearDB(){
-       // String sql = "runscript from '~/IdeaProjects/Tarea3 Web/src/main/resources/scripts/tablas.sql'";
         String sql = "CREATE TABLE IF NOT EXISTS USUARIO (\n" +
                 "  ID            BIGINT PRIMARY KEY,\n" +
                 "  USERNAME      VARCHAR2(30),\n" +
